@@ -14,43 +14,34 @@
           global $comment;
           $comment_id= $comment-> comment_ID;
           
-          $link= "<a href='https://app.modzy.com/api/results/'.''>Sentiment </a>";
-        // $commentdata = apply_filters( 'preprocess_comment', $commentdata );
+       //   $link= "<a href='https://app.modzy.com/api/results/'.''>Sentiment </a>";
+      
         
         //  echo $commentdata;
          echo ("<div id='appvue'  ><ai-plugin author='" .$text ."' /> <div >
          <div >
          
          </div>job: {{getResults}}<br/> 
-       </div>plugin by $text   </div>
-       ");
-        $sentiment = 1;
-        if ($sentiment < 0 ){
-
-            $sentiment_result= "negative";
-            
+       </div>plugin by $text   </div>"
+         );
         
-        }else {
-            $sentiment_result= "neutral";
-        }
         // return $sentiment_result;
-       $link= $link."<ai-plugin />";
+       
         // return  $text. "<p>sentiment: [$link]</p>";
 
          wp_enqueue_script('app', plugin_dir_url(__FILE__) . 'app.js');
      }
      
-      add_filter( 'preprocess_comment' , 'comment_analyzer_sentiment' );
-    //  add_filter ('comment_text', 'commentFunction');
+   //   add_filter( 'preprocess_comment' , 'comment_analyzer_sentiment' );
+      add_filter ('comment_text', 'commentFunction');
 
      function comment_analyzer_sentiment( $commentdata ) {
      
         echo isset($meta['Title']) ? $meta['Title'] : ''; 
       $input = array( "document" => $commentdata[4] );
       
-      $comment = $commentdata[1];
+      $comment = $commentdata[4];
       
-      echo $input;
       echo ("<div id='appvue' author='" .$input ."' > <div >
       <div >
       
