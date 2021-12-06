@@ -13,15 +13,13 @@
         
           global $comment;
           $comment_id= $comment-> comment_ID;
-          
-       //   $link= "<a href='https://app.modzy.com/api/results/'.''>Sentiment </a>";
       
         
         //  echo $commentdata;
          echo ("<div id='appvue'  ><ai-plugin author='" .$text ."' /> <div >
          <div >
          
-         </div>job: {{getResults}}<br/> 
+         </div> <br/> 
        </div>plugin by $text   </div>"
          );
         
