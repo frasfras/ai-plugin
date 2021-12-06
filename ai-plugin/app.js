@@ -98,7 +98,7 @@ Vue.component('ai-plugin', {
                  headers: {Accept: 'application/json', Authorization: 'ApiKey Uk8BAMu80fFE3ra4fLLX.U9VPP8K2fyUg82gyfpxT'}
                };
                
-               fetch('https://app.modzy.com/api/results/86cfa79d-47b8-4621-a1ac-67b4674aa14e', options)
+               fetch(job_endpoint, options)
                  .then((res) => res.json())
                    .then((res) => {
                          this.sentim= res;
@@ -109,7 +109,7 @@ Vue.component('ai-plugin', {
       },
   
     mounted(){
-      //    this.fetchWeather();
+    
       this.fetchSentiment();
       this.fetchResults();
     },
