@@ -114,7 +114,7 @@ Vue.component('ai-plugin', {
       this.fetchResults();
     },
     template:  "  <div > {{getJob}} <p>Using mustaches: <span v-html='rawHtml'></span> {{ <a href='/'>check</a> }}</p></div> " ,
-    template:  "  <div >job: {{getJob}} <p> <span v-html='rawHtml'></span> <button  @click='fetchResults' >Submit</button></p><div v-if=' sentimStatus > 0 '>  sentiment: positive  </div><div v-if=' sentimStatus < 0 '>  sentiment: negative  </div></div> " ,
+    template:  "  <div > <div style='display:none'>job: {{getJob}}</div> <p> <span v-html='rawHtml'></span> <button  @click='fetchResults' >Submit</button></p><div v-if=' sentimStatus > 0 '>  sentiment: positive  </div><div v-if=' sentimStatus < 0 '>  sentiment: negative  </div></div> " ,
 
 
 });

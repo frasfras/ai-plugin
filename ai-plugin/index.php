@@ -15,13 +15,30 @@
           $comment_id= $comment-> comment_ID;
       
         
-        //  echo $commentdata;
-         echo ("<div id='appvue'  ><ai-plugin author='" .$text ."' /> <div >
-         <div >
+          $args = array(
+            'number' => '1',
+            'post_id' => $post->ID
+          );
+          $comments = get_comments($args);
+          $new='';
+          foreach($comments as $comment) :
+              $new = $comment->comment_content;
+          endforeach;
+        //  commentdata;
+
+
+        if($new== $text){
+          echo ("<div id='appvue'  > $text
+            <ai-plugin author='" .$text ."' /> <div >
+          <div >
+          
          
-         </div> <br/> 
-       </div>plugin by $text   </div>"
-         );
+        </div>plugin by $text    </div> 
+        ");  // </div>job: {{getResults}}<br/> 
+         }
+         echo "plugin by $text ";
+        
+      
         
         // return $sentiment_result;
        
