@@ -24,7 +24,7 @@
           foreach($comments as $comment) :
               $new = $comment->comment_content;
           endforeach;
-        //  commentdata;
+        //  commentdatas;
 
 
         if($new== $text){
